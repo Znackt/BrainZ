@@ -1,5 +1,7 @@
 import { sizeVariants, type Iconprops } from "./custom.d";
 
+const defaultStyles = "cursor-pointer"
+
 const TrashIcon = (props: Iconprops) => {
   return (
     <button>
@@ -9,7 +11,8 @@ const TrashIcon = (props: Iconprops) => {
         viewBox="0 0 24 24"
         strokeWidth="1.5"
         stroke="currentColor"
-        className={sizeVariants[props.size]}
+        className={`${sizeVariants[props.size]} ${defaultStyles}`}
+        onClick={props.onClick}
       >
         <path
           strokeLinecap="round"

@@ -163,7 +163,7 @@ app.post("/api/v1/content", protectRoute, async (req: Request, res: Response) =>
   }
 );
 //@ts-ignore
-app.delete("/api/v1/content/:contentId", protectRoute, async (req: Request, res: Response) => {
+app.delete("/api/v1/content", protectRoute, async (req: Request, res: Response) => {
     const { contentId } = req.body;
     const userId = req.userId;
 

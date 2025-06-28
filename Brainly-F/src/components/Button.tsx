@@ -2,7 +2,7 @@ import type { ReactElement } from "react";
 
 interface ButtonProps {
   variant: "primary" | "secondary" | "tertiary" | "quaternary" | "quinary" | "senary";
-  text: string;
+  text: string | null;
   onClick?: () => void;
   startIcon?: ReactElement;
   endIcon?: ReactElement;

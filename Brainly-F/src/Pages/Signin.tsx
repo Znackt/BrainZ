@@ -42,11 +42,11 @@ const Signin = () => {
   };
 
   return (
-    <div className="h-screen w-screen flex bg-gray-800 justify-center items-center">
+    <div className="h-screen w-screen flex flex-col bg-gray-800 justify-center items-center">
       <div className="bg-white rounded-xl border min-w-lg min-h-8/12 relative">
         <div className="absolute top-4 left-4">
           <CrossIcon size="lg" />
-        </div>
+        </div>  
         <div className="flex flex-col items-center px-8 py-16">
           <div className="w-full max-w-md flex flex-col items-center">
             <div className="text-4xl font-semibold text-left mb-8">

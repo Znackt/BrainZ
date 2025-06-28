@@ -33,9 +33,9 @@ export const Card = (props: CardProps) => {
     try {
       await axios({
         method: "delete",
-        url: `${BACKEND_URL}/api/v1/content/${contentId}`,
+        url: `${BACKEND_URL}/api/v1/content`,
         withCredentials: true,
-        
+        data: {contentId}
       });
       alert("Content removed successfully");
       window.location.reload();
@@ -67,10 +67,8 @@ export const Card = (props: CardProps) => {
             </div>
             <div className="text-gray-500 cursor-pointer">
               <a>
-                <Button
-                  size="xs"
-                  variant="primary"
-                  text="hi"
+                <TrashIcon
+                  size="sm"
                   onClick={() => deleteContent({ contentId: props.contentId })}
                 />{" "}
               </a>
