@@ -13,16 +13,23 @@ import mongoose from "mongoose";
 dotenv.config();
 
 const PORT = process.env.SERVER_PORT;
-const URL = process.env.CLIENT_URL;
+const URL = process.env.CLIENT_URL!;
 
 if (!URL) {
   console.log("URL NOT PRESENT")
 }
 
 const corsOptions = {
-  origin:  [`${URL}`],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  origin: function (origin: any, callback: any) {
+      if (URL.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("You are very chalak bro....."));
+      }
+    },
+    methods: ["GET", "POST", "PATCH", "DELETE", "PUT"],
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
 };
 
 const app = express();
