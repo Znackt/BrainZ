@@ -34,7 +34,7 @@ const Signin = () => {
       alert("Signin successful!");
 
       // Redirect to dashboard
-      navigate("/dashboard");
+      navigate("/");
     } catch (error: any) {
       console.error("Error signing up:", error.message);
       alert("Error signing up: " + error.message);

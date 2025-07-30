@@ -15,6 +15,10 @@ dotenv.config();
 const PORT = process.env.SERVER_PORT;
 const URL = process.env.CLIENT_URL;
 
+if (!URL) {
+  console.log("URL NOT PRESENT")
+}
+
 const corsOptions = {
   origin:  [`${URL}`],
   credentials: true,
